@@ -1,5 +1,4 @@
 import "./Button.scss";
-import { motion } from "framer-motion";
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,11 +13,7 @@ const Button = ({
   ...rest
 }) => {
   return (
-    <motion.button
-      whileHover={{
-        opacity: 0.85,
-        transition: { duration: 0.1 },
-      }}
+    <button
       className={classNames}
       onClick={onClick}
       disabled={isDisabled}
@@ -36,7 +31,7 @@ const Button = ({
       ) : (
         <span className="d-flex align-items-center">{children}</span>
       )}
-    </motion.button>
+    </button>
   );
 };
 

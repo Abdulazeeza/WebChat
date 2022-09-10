@@ -28,7 +28,7 @@
 
 .btn--primary {
     background-color: $purple-color;
-    color: $white-color;
+    color: $white-color !important;
 
     &:disabled {
         cursor: not-allowed;
