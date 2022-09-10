@@ -1,0 +1,47 @@
+@import '../../../assets/styles/base/variables';
+@import '../../../assets/styles/base/mixins';
+
+.btn {
+    height: 48px;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0px 25px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    outline: none !important;
+    box-shadow: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none !important;
+    @include respond-to("tablet") {
+        height: 42px;
+        padding: 0 17px;
+    }
+    &.cover {
+        width: 100%;
+    }
+}
+
+.btn--primary {
+    background-color: $purple-color;
+    color: $white-color;
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: lighten(#766df4, 6%);
+    }
+}
+
+.btn--disabled {
+    background: #c5c5c5;
+    color: $white-color;
+
+    &:disabled {
+        cursor: not-allowed;
+        user-select: none;
+    }
+}

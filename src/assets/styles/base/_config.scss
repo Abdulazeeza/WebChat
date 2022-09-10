@@ -1,0 +1,27 @@
+@import './variables';
+@import './mixins';
+
+* {
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+//set body properties
+body {
+    margin: auto;
+    padding: 0px;
+    max-width: 1600px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    outline: none;
+    cursor: pointer;
+}
