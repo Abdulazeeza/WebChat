@@ -3,7 +3,18 @@ import useChatSection from "./useChatSection";
 import primaryComponents from "../../primaryComponents";
 
 const ChatSection = () => {
-    const { user } = useChatSection();
+
+    const {
+        user,
+        messages,
+        message,
+        setMessage,
+        sendMessage,
+        messageBody,
+        pageSize,
+        loadMoreMessages
+    } = useChatSection();
+
     return (
         <div className="chat-section">
             <div className="chat-section__header">
@@ -11,19 +22,23 @@ const ChatSection = () => {
             </div>
 
             <div className="message-body">
-                <div className="message-box">
-                    <h6 className="mb-1">Habib</h6>
-                    <div className="message">
-                        Hello, everyone
-                    </div>
-                </div>
+                {pageSize < messages.length &&
+                    <div
+                        onClick={loadMoreMessages}
+                        className="load-more mb-3">
+                        Load more
+                    </div>}
 
-                <div className="message-box my-message">
-                    <h6 className="mb-1">You</h6>
-                    <div className="message">
-                        Hello, everyone
+                {messages.slice(-pageSize).map((item, index) => (
+                    <div key={index} className={`message-box ${user === item.userName && "my-message"}`}>
+                        <h6 className="mb-1">{item.userName === user ? "You" : item.userName}</h6>
+                        <div className="message">
+                            {item.message}
+                        </div>
                     </div>
-                </div>
+                ))}
+
+                <div ref={messageBody}></div>
             </div>
 
             <div className="chat-section__bottom">
@@ -31,9 +46,17 @@ const ChatSection = () => {
                     classNames="chat-section__bottom__input"
                     placeholder="Message..."
                     hasValidation={false}
+                    value={message}
+                    onChange={(value) => setMessage(value)}
+                    onKeyUp={(e) => { if (e.key === 'Enter' && message !== "") sendMessage() }}
                 />
 
-                <button className="chat-section__bottom__button ml-2">Send</button>
+                <button
+                    onClick={sendMessage}
+                    disabled={message === ""}
+                    className="chat-section__bottom__button ml-2">
+                    Send
+                </button>
             </div>
         </div>
     )

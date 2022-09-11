@@ -2,6 +2,7 @@ import primaryComponents from "../../primaryComponents";
 import userNameValidation from "./Validations";
 import useUserPrompt from "./useUserPrompt";
 import { Controller } from "react-hook-form";
+import "./UserPrompt.scss";
 
 const UserPrompt = ({ setShowChatView }) => {
     const { regiseterUser, userName, setUserName, } = useUserPrompt({ setShowChatView });
@@ -14,7 +15,7 @@ const UserPrompt = ({ setShowChatView }) => {
     } = userNameValidation(userName);
 
     return (
-        <form onSubmit={handleSubmit(regiseterUser)}>
+        <form onSubmit={handleSubmit(regiseterUser)} className="user-prompt">
             <h4 className="text-center mb-4">Please fill the form before proceeding</h4>
             <Controller
                 name="userName"
@@ -28,10 +29,11 @@ const UserPrompt = ({ setShowChatView }) => {
                         type="text"
                         name="userName"
                         errorMessage={errors.userName}
+                        value={userName}
                         onKeyUp={() =>
                             errors.userName !== undefined && trigger("userName")
                         }
-                        onChange={({ target: { value } }) => {
+                        onChange={(value) => {
                             onChange(value);
                             setUserName(value);
                         }}

@@ -2,18 +2,25 @@
 
 .chat-section {
     height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
     &__header {
         width: 100%;
         padding: 10px 20px 7px 20px;
         background: $purple-color;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
 
     .message-body {
-        padding: 50px 0px;
+        padding: 10px 25px;
         height: 100%;
+        overflow-y: auto;
+        .load-more{
+            text-align: center;
+            cursor: pointer;
+            color:  $gray-color;
+        }
         .message-box {
             margin-bottom: 10px;
             .message {
@@ -24,8 +31,8 @@
             }
             &.my-message{
                 text-align: right;
-                margin-left: auto;
                 .message {
+                    margin-left: auto;
                     text-align: left;
                     background: $purple-color;
                     color: $white-color;
@@ -38,9 +45,6 @@
         width: 100%;
         padding: 10px 20px 7px 20px;
         background: $purple-color;
-        position: absolute;
-        bottom: 0;
-        left: 0;
         display: flex;
 
         &__input{

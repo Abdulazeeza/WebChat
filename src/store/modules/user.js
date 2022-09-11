@@ -13,7 +13,10 @@ export const userDetailsSlice = createSlice({
         addMessage: (state, action) => {
             state.messages.push(action.payload)
         },
+        setMessages: (state, action) => {
+            state.messages = action.payload
+        }
     }
 });
 
-export const { setUser, addMessage } = userDetailsSlice.actions
+export const { setUser, addMessage, setMessages } = userDetailsSlice.actions
