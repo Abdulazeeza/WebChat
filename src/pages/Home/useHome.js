@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const useHome = () => {
-    const [showChatView, setShowChatView] = useState(false)
+    const [showChatView, setShowChatView] = useState(true)
 
-    return {showChatView, setShowChatView}
+    return { showChatView, setShowChatView }
 }
 export default useHome;

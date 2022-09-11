@@ -1,0 +1,60 @@
+@import "../../../assets/styles/base/variables";
+
+.chat-section {
+    height: 500px;
+    &__header {
+        width: 100%;
+        padding: 10px 20px 7px 20px;
+        background: $purple-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .message-body {
+        padding: 50px 0px;
+        height: 100%;
+        .message-box {
+            margin-bottom: 10px;
+            .message {
+                padding: 6px 10px;
+                border-radius: 8px;
+                background: #f3f1fc;
+                max-width: 75%;
+            }
+            &.my-message{
+                text-align: right;
+                margin-left: auto;
+                .message {
+                    text-align: left;
+                    background: $purple-color;
+                    color: $white-color;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        width: 100%;
+        padding: 10px 20px 7px 20px;
+        background: $purple-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+
+        &__input{
+            border-radius: 10px !important;
+            height: 40px !important;
+        }
+
+        &__button{
+            outline: none;
+            background: $white-color;
+            border: none;
+            color: $purple-color;
+            padding: 0 15px;
+            border-radius: 10px;
+        }
+    }
+}

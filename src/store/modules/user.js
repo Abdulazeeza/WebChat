@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Define the initial state using that type
-const initialState = { user: null, messages: [] }
+const initialState = { user: "Abdulazeez", messages: [] }
 
 export const userDetailsSlice = createSlice({
-    name: "profile",
+    name: "user",
     initialState,
     reducers: {
         setUser: (state, action) => {

@@ -14,6 +14,7 @@ const InputField = ({
   register = () => {},
   onKeyUp = () => {},
   classNames = "",
+  hasValidation = true,
   ...props
 }) => {
   return (
@@ -44,7 +45,7 @@ const InputField = ({
         defaultValue={value}
         {...props}
       />
-      <p
+     {hasValidation && <p
         className={`error-message text-danger ${
           errorMessage !== undefined ? "show" : ""
         }`}
@@ -55,7 +56,7 @@ const InputField = ({
           style={{ fontSize: "13px" }}
         />
         {errorMessage !== undefined && <span>{errorMessage.message}</span>}
-      </p>
+      </p>}
     </div>
   );
 };

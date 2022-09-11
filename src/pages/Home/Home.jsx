@@ -4,13 +4,13 @@ import secondaryComponents from "../../components/secondaryComponents";
 
 const Home = () => {
     const { showChatView, setShowChatView } = useHome();
-    
+
     return (
         <div className="home">
             {showChatView ? (
-                <div>aaa</div>
+                <secondaryComponents.ChatSection />
             ) : (
-                <secondaryComponents.UserPrompt setShowChatView={setShowChatView}/>
+                <secondaryComponents.UserPrompt setShowChatView={setShowChatView} />
             )}
         </div>
     );
