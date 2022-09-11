@@ -1,5 +1,5 @@
 # WebChat
-This is chat system 
+This is a chat system.
 live URL: https://steady-webchat.netlify.app
 
 ## Instatllation guideline
