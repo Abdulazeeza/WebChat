@@ -1,5 +1,6 @@
 # WebChat
-This is chat system
+This is chat system 
+live URL: https://steady-webchat.netlify.app
 
 ## Instatllation guideline
 clone the repo using git clone `https://github.com/Abdulazeeza/WebChat.git`
