@@ -9,11 +9,14 @@ const userSchema = yup.object({
 
 }).required();
 
-const userNameValidation = () => {
+const userNameValidation = (userName) => {
     return useForm({
         resolver: yupResolver(userSchema),
         shouldFocusError: true,
-        mode: "onBlur"
+        mode: "onBlur",
+        defaultValues:{
+            userName
+        }
     });
 }
 
