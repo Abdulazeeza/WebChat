@@ -1,0 +1,46 @@
+// Variables
+$purple-color: #7647ee;
+$white-color: #ffffff;
+$dark-color: #15112d;
+$gray-color: #9091b3;
+$danger-color: #dc3545;
+
+.white {
+    background: $white-color  !important;
+
+    &--text {
+        color: $white-color  !important;
+    }
+}
+
+.purple {
+    background: $purple-color  !important;
+
+    &--text {
+        color: $purple-color  !important;
+    }
+}
+
+.gray {
+    background: $gray-color;
+
+    &--text {
+        color: $gray-color;
+    }
+}
+
+.dark {
+    background: $dark-color;
+
+    &--text {
+        color: $dark-color;
+    }
+}
+
+.danger {
+    background: $danger-color;
+
+    &--text {
+        color: $danger-color;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../../assets/styles/base/variables';
+
+.input-field {
+    width: 100%;
+
+    input {
+        height: 50px;
+        border: 0.75px solid rgba(151, 151, 151, 0.8);
+        border-radius: 4px;
+        padding: 0 1em 2px 1em;
+        background: #f3f1fc;
+        width: 100%;
+        outline: none;
+
+        &:hover{
+            border-color: $purple-color;
+        }
+
+        &:focus {
+            border-color: $purple-color;
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background: rgba(0, 0, 0, 0.05);
+            color: -internal-light-dark(rgb(84, 84, 84), rgb(170, 170, 170));
+            border-color: rgba(151, 151, 151, 0.8);
+        }
+        
+        &.error-border{
+            border-color: $danger-color;
+        }
+    }
+    .error-message{
+        font-size: 13px;
+        visibility: hidden;
+        display: flex;
+        margin-top: 2px;
+        min-height: 15px;
+        &.show{
+            visibility: visible; 
+        }
+    }
+}
